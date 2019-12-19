@@ -20,7 +20,7 @@ unsigned int flowMilliLitres;
 unsigned long totalMilliLitres;
 unsigned long oldTime;
 
-class Flowrate_1{
+class Flowrate1{
   public:
     void flr1_loop();
     static void pulseCounter();
@@ -29,7 +29,7 @@ class Flowrate_1{
 
 
   
-void Flowrate_1::setup1()
+void Flowrate1::setup1()
 {  
   // Initialize a serial connection for reporting values to the host
   Serial.begin(9600);
@@ -56,7 +56,7 @@ void Flowrate_1::setup1()
 /**
  * Main program loop
  */
-void Flowrate_1::flr1_loop()
+void Flowrate1::flr1_loop()
 {
    
    if((millis() - oldTime) > 1000)    // Only process counters once per second
@@ -115,7 +115,7 @@ void Flowrate_1::flr1_loop()
 /*
 Insterrupt Service Routine
  */
-static void pulseCounter()
+static void Flowrate1::pulseCounter()
 {
   // Increment the pulse counter
   pulseCount++;
