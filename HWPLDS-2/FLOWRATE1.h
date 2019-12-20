@@ -50,12 +50,13 @@ int Flowrate1::flr1_loop()
 //      Serial.print("L/min ");       
 //    Serial.print(totalMilliLitres);
 //    Serial.println("mL"); 
-    return int(flowRate);
+ 
     pulseCount = 0;
  
     attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
+    return int(flowRate);
   }
-  
+     
 }
 
 static void Flowrate1::pulseCounter()
