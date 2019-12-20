@@ -60,8 +60,7 @@ void Flowrate1::flr1_loop()
       
     unsigned int frac;
     Serial.print(int(flowRate));  // Print the integer part of the variable
-    Serial.print("L/min");   
-    Serial.print("\t");    
+    Serial.print("L/min ");       
     Serial.print(totalMilliLitres);
     Serial.println("mL"); 
 
