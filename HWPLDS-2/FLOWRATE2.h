@@ -57,13 +57,13 @@ int Flowrate2::flr2_loop()
 //    Serial.print(int(flowRate1));  // Print the integer part of the variable
 //    Serial.print("L/min");
 //    Serial.print(" | ");       // Print tab space
- 
+    return int(flowRate1);
     pulseCount1 = 0;
     
     // Enable the interrupt again now that we've finished sending output
     attachInterrupt(sensorInterrupt1, pulseCount1er, FALLING);
   }
- return int(flowRate1);
+ 
 }
 
 /*
