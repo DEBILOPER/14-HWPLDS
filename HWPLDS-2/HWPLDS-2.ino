@@ -11,8 +11,7 @@ ff.setup2();
 
 void loop() {
   // put your main code here, to run repeatedly:
- Serial.println("Flowrate 1: "); 
- f.flr1_loop();
- Serial.println("Flowrate 2: "); 
  ff.flr2_loop();
+ f.flr1_loop();
+
 }
