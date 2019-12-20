@@ -10,7 +10,7 @@ unsigned long oldTime;
 
 class Flowrate1{
   public:
-    void flr1_loop();
+    int flr1_loop();
     static void pulseCounter();
     void setup1();
   };
@@ -33,7 +33,7 @@ void Flowrate1::setup1()
   attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
 }
 
-void Flowrate1::flr1_loop()
+int Flowrate1::flr1_loop()
 {
    
    if((millis() - oldTime) > 1000)    // Only process counters once per second
@@ -45,9 +45,9 @@ void Flowrate1::flr1_loop()
     flowMilliLitres = (flowRate / 60) * 1000;
     totalMilliLitres += flowMilliLitres;
       
-    unsigned int frac;
-    Serial.print(int(flowRate));  // Print the integer part of the variable
-    Serial.print("L/min ");       
+      unsigned int frac;
+//      Serial.print(int(flowRate));  // Print the integer part of the variable
+//      Serial.print("L/min ");       
     Serial.print(totalMilliLitres);
     Serial.println("mL"); 
 
@@ -55,7 +55,7 @@ void Flowrate1::flr1_loop()
  
     attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
   }
- 
+  return int(flowRate);
 }
 
 static void Flowrate1::pulseCounter()

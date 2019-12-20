@@ -11,7 +11,7 @@ unsigned long oldTime1;
 
 class Flowrate2{
   public:
-    void flr2_loop();
+    int flr2_loop();
     static void pulseCount1er();
     void setup2();
   };
@@ -36,7 +36,7 @@ void Flowrate2::setup2()
   attachInterrupt(sensorInterrupt1, pulseCount1er, FALLING);
 }
 
-void Flowrate2::flr2_loop()
+int Flowrate2::flr2_loop()
 {
    
    if((millis() - oldTime1) > 1000)    // Only process counters once per second
@@ -63,7 +63,7 @@ void Flowrate2::flr2_loop()
     // Enable the interrupt again now that we've finished sending output
     attachInterrupt(sensorInterrupt1, pulseCount1er, FALLING);
   }
- 
+ return int(flowRate1);
 }
 
 /*
