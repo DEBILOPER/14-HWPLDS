@@ -12,6 +12,8 @@ ff.setup2();
 void loop() {
   // put your main code here, to run repeatedly:
  ff.flr2_loop();
+ delay (750);
  f.flr1_loop();
+ delay (500);
 
 }

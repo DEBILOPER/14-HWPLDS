@@ -14,8 +14,6 @@ class Flowrate1{
     static void pulseCounter();
     void setup1();
   };
-
-
   
 void Flowrate1::setup1()
 {  
@@ -32,30 +30,19 @@ void Flowrate1::setup1()
   totalMilliLitres  = 0;
   oldTime           = 0;
 
-  // The Hall-effect sensor is connected to pin 2 which uses interrupt 0.
-  // Configured to trigger on a FALLING state change (transition from HIGH
-  // state to LOW state)
   attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
 }
 
-/**
- * Main program loop
- */
 void Flowrate1::flr1_loop()
 {
    
    if((millis() - oldTime) > 1000)    // Only process counters once per second
   { 
-    // Disable the interrupt while calculating flow rate and sending the value to
-    // the host
     detachInterrupt(sensorInterrupt);
 
     flowRate = ((1000.0 / (millis() - oldTime)) * pulseCount) / calibrationFactor;
-
     oldTime = millis();
-
     flowMilliLitres = (flowRate / 60) * 1000;
-
     totalMilliLitres += flowMilliLitres;
       
     unsigned int frac;
