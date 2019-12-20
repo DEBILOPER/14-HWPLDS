@@ -54,9 +54,9 @@ int Flowrate2::flr2_loop()
       
     unsigned int frac;
    
-    Serial.print(int(flowRate1));  // Print the integer part of the variable
-    Serial.print("L/min");
-    Serial.print(" | ");       // Print tab space
+//    Serial.print(int(flowRate1));  // Print the integer part of the variable
+//    Serial.print("L/min");
+//    Serial.print(" | ");       // Print tab space
  
     pulseCount1 = 0;
     
