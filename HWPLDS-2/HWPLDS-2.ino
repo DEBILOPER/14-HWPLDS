@@ -4,8 +4,7 @@ Flowrate1 f;
 Flowrate2 ff;
 
 int fr1, fr2;
-void setup() {
-  // put your setup code here, to run once:
+void setup() {  // put your setup code here, to run once:
 f.setup1();
 ff.setup2();
 }
@@ -13,6 +12,7 @@ ff.setup2();
 void loop() {
     fr2 = ff.flr2_loop();
     fr1 = f.flr1_loop();
+    
     Serial.print(fr2);   // Print the integer part of the variable
     Serial.print("L/min "); 
     Serial.print(" | ");            // Print tab space
@@ -20,7 +20,5 @@ void loop() {
     Serial.print(fr1);    // Print the integer part of the variable
     Serial.print("L/min "); 
     delay (500);
-
-    
 
 }
